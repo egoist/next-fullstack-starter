@@ -26,7 +26,7 @@
     "@egoist/md-colors": "^1.2.2",
     "@egoist/prettier-config": "^0.1.0",
     "@fullhuman/postcss-purgecss": "^2.1.2",
-    "@types/node": "^13.13.2",
+    "@types/node": "^14.0.10",
     "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.6",
     "husky": "^4.2.5",
