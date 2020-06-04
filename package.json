@@ -7,6 +7,16 @@
     "start": "next start"
   },
   "prettier": "@egoist/prettier-config",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx,json,md,css}": [
+      "prettier --write"
+    ]
+  },
   "dependencies": {
     "next": "^9.3.5",
     "react": "^16.13.1",
@@ -19,6 +29,9 @@
     "@types/node": "^13.13.2",
     "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.6",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.8",
+    "prettier": "^2.0.5",
     "tailwindcss": "^1.4.6",
     "typescript": "^3.8.3"
   }
