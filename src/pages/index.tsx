@@ -1,5 +1,7 @@
 export default () => {
-  return <>
-    Hello Next!
-  </>
+  return (
+    <>
+      <h1 className="text-center text-4xl my-10">Hello Next!</h1>
+    </>
+  )
 }
