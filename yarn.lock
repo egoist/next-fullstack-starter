@@ -939,6 +939,11 @@
   resolved "https://registry.yarnpkg.com/@egoist/md-colors/-/md-colors-1.2.2.tgz#92227d56b6f72cbf4e359e532c096b89a1418c96"
   integrity sha512-Qs0W63ZELvEenmAUUO8H5oufl2zxxylS+vNo1fhYcsZMT2gc1gdiFMmu7IPKbK/nXEe2/zv9zRiwX3m6GvrejQ==
 
+"@egoist/prettier-config@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@egoist/prettier-config/-/prettier-config-0.1.0.tgz#242974598c11c0efd80f63cedde3b41a6cda1fdb"
+  integrity sha512-BYeixvJcTY/jOgawCgFOBxYBPP0e1WQPiyZw98BsUEjSI5SbdAguRKodqcyT50wie+HGk1EuhGUzC3lfrKL4Vg==
+
 "@fullhuman/postcss-purgecss@^2.1.2":
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/@fullhuman/postcss-purgecss/-/postcss-purgecss-2.1.2.tgz#8fe4d4ae2b58214b5452cb490a31c7146517442f"

@@ -6,6 +6,7 @@
     "export": "next export",
     "start": "next start"
   },
+  "prettier": "@egoist/prettier-config",
   "dependencies": {
     "next": "^9.3.5",
     "react": "^16.13.1",
@@ -13,6 +14,7 @@
   },
   "devDependencies": {
     "@egoist/md-colors": "^1.2.2",
+    "@egoist/prettier-config": "^0.1.0",
     "@fullhuman/postcss-purgecss": "^2.1.2",
     "@types/node": "^13.13.2",
     "@types/react": "^16.9.34",
