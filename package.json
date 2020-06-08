@@ -29,7 +29,7 @@
     "@types/react": "^16.9.35",
     "@types/react-dom": "^16.9.8",
     "husky": "^4.2.5",
-    "lint-staged": "^10.2.8",
+    "lint-staged": "^10.2.9",
     "prettier": "^2.0.5",
     "tailwindcss": "^1.4.6",
     "typescript": "^3.9.3"
