@@ -31,6 +31,6 @@
     "lint-staged": "^10.2.11",
     "prettier": "^2.0.5",
     "tailwindcss": "^1.4.6",
-    "typescript": "^3.9.6"
+    "typescript": "^3.9.7"
   }
 }
