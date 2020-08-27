@@ -1,5 +1,7 @@
 # Next FullStack Starter
 
+Next.js + Prisma + TailwindCSS + (Type-)GraphQL
+
 ## Documentation
 
 ### Development
