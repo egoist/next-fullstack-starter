@@ -69,6 +69,49 @@ Applying local migrations to the database, run this after `yarn migrate:save`.
 
 Rollback the most recent migration.
 
+### Folder structure
+
+```bash
+.
+├── README.md
+├── graphql-codegen.yml
+├── graphql.schema.json       # Auto-generated GraphQL schema
+├── next-env.d.ts
+├── next.config.js
+├── package.json
+├── postcss.config.js
+├── prisma
+│   └── schema.prisma         # Database schema
+├── scripts
+│   └── with-env.js           # Run command with `.env` file loaded
+├── server 
+│   ├── auth.ts               # Auth helpers
+│   ├── constants.ts
+│   ├── db.types.ts           # Types from Prisma
+│   ├── decorators            # ES decorators, mainly for Type GraphQL resolvers
+│   ├── graphql.types.ts      # Types used by GraphQL resolvers
+│   ├── guards                # Authorization
+│   ├── passport.ts           # `passport` for social login
+│   ├── prisma.ts             # Prisma instance
+│   ├── resolvers             # GraphQL resolvers, powered by Type GraphQL
+│   └── response.ts           # HTTP response helpers
+├── src
+│   ├── css                   # CSS, mainly tailwind.css
+│   ├── generated             # Generate Apollo React hooks
+│   ├── graphql               # .graphql files
+│   └── pages                 # Next.js pages
+├── tailwind.config.js
+├── tsconfig.json
+├── types.d.ts
+└── yarn.lock
+```
+
+### GraphQL
+
+We create a GraphQL at `/api/graphql` using Apollo Server and Type GraphQL, GraphQL resolvers are populated at `server/resolvers`, consult [Type GraphQL](https://typegraphql.com/docs/custom-decorators.html) docs for more.
+
+Every time you create a new resolver file you need to add it to `src/pages/api/graphql.ts`.
+
 ### Style guide
 
 #### Variable casing
