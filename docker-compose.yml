@@ -9,7 +9,7 @@ services:
       POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
       POSTGRES_DB: ${DATABASE_NAME}
     networks:
-      - trackbee
+      - myapp
     ports:
       - '${DB_PORT}:5432'
 
@@ -17,10 +17,10 @@ services:
     image: redis:6-alpine
     container_name: myapp-redis
     networks:
-      - trackbee
+      - myapp
     ports:
       - '${REDIS_PORT}:6379'
 
 networks:
-  trackbee:
+  myapp:
     driver: bridge
