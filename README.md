@@ -106,6 +106,8 @@ Rollback the most recent migration.
 └── yarn.lock
 ```
 
+We also added two Next.js/TS aliases: `@` for `src` folder and `@server` for `server` folder.
+
 ### GraphQL
 
 We create a GraphQL at `/api/graphql` using Apollo Server and Type GraphQL, GraphQL resolvers are populated at `server/resolvers`, consult [Type GraphQL](https://typegraphql.com/docs/custom-decorators.html) docs for more.
