@@ -1,8 +1,15 @@
-# next-starter
+# Next FullStack Starter
 
-My [Next.js](https://nextjs.org) starter.
+## Documentation
 
-## What's included
+### Development
 
-- TailwindCSS + PurgeCSS, see [postcss.config.js](./postcss.config.js)
-- TypeScript
+```bash
+yarn dev
+```
+
+### Style Guide
+
+#### Casing
+
+Use snake_case in `schema.prisma` and GraphQL types, otherwise camelCase is preferred.
