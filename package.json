@@ -4,7 +4,11 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "export": "next export"
+    "with-env": "node scripts/with-env",
+    "migrate:save": "node scripts/with-env prisma migrate save --experimental",
+    "migrate:up": "node scripts/with-env prisma migrate up --experimental",
+    "migrate:rollback": "node scripts/with-env prisma migrate rollback --experimental",
+    "g:prisma": "prisma generate"
   },
   "husky": {
     "hooks": {
@@ -17,15 +21,19 @@
     ]
   },
   "dependencies": {
+    "@prisma/client": "2.5.1",
     "next": "^9.5.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
     "@egoist/prettier-config": "^0.1.0",
+    "@prisma/cli": "2.5.1",
     "@types/node": "^14.6.0",
     "@types/react": "^16.9.46",
     "@types/react-dom": "^16.9.8",
+    "dotenv": "^8.2.0",
+    "dotenv-expand": "^5.1.0",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
     "prettier": "^2.1.0",
