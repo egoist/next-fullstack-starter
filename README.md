@@ -8,7 +8,7 @@ This project serves as the starting point of some of my SaaS products, so I'm co
 
 ### Prerequisites without Docker
 
-Moving `.env.example` to `.env`
+Moving `.env.example` to `.env`.
 
 Then get your database ready, install PostgreSQL and make sure you have a user and database matching following config:
 
@@ -24,11 +24,22 @@ You can also customize it by updating `.env` file.
 
 ### Prerequisites with Docker
 
-[TODO]
+Moving `.env.example` to `.env`.
+
+Change `myapp` in `docker-compose.yml` to your custom app name which is used to name containers.
+
+Then install Docker and run following command to start the database container:
+
+```bash
+docker-compose up -d
+```
+
+It will create a database matching the config in `.env` file, feel free to update it and rerun above command.
 
 ### Development
 
 ```bash
+yarn
 yarn dev
 ```
 
