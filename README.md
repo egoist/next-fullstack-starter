@@ -18,7 +18,7 @@ yarn dev
 
 Use snake_case in `schema.prisma` and GraphQL types, otherwise camelCase is preferred.
 
-### Filename casing
+#### Filename casing
 
 Use PascalCase for React Components, other wise use kebab-case.
 
