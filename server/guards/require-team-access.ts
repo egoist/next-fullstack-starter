@@ -7,9 +7,9 @@ export async function requireTeamAccess(
   user: ModelUserWithMembers,
   team: ModelTeam,
 ) {
-  const member = user.members.find((member) => member.team_id === team.id)
+  const member = user.members.find((member) => member.teamId === team.id)
 
-  if (level === 'admin' && (!member || !member.is_admin)) {
+  if (level === 'admin' && (!member || !member.isAdmin)) {
     throw new ApolloError(`Require admin permission to access this team`)
   }
 

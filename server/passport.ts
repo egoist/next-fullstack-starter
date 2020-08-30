@@ -62,7 +62,7 @@ async function getUserByProviderProfile(
   const email = profile.emails[0].value
   const avatar = profile.photos[0].value
 
-  const providerKey = `${provider}_user_id`
+  const providerKey = `${provider}UserId` as 'githubUserId' | 'googleUserId'
 
   // Find one by provider user id
   let existing = await prisma.user.findOne({

@@ -10,33 +10,33 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model user {
-  id             String   @default(cuid()) @id
-  created_at     DateTime @default(now())
-  updated_at     DateTime @updatedAt
-  name           String
-  email          String   @unique
-  google_user_id String?
-  github_user_id String?
-  avatar         String?
-  members        member[]
+model User {
+  id           String   @default(cuid()) @id
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  name         String
+  email        String   @unique
+  googleUserId String?
+  githubUserId String?
+  avatar       String?
+  members      Member[]
 }
 
-model member {
-  id         String   @default(cuid()) @id
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
-  user       user     @relation(fields: [user_id], references: [id])
-  user_id    String
-  team       team?    @relation(fields: [team_id], references: [id])
-  team_id    String?
-  is_admin   Boolean?
+model Member {
+  id        String   @default(cuid()) @id
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
+  team      Team?    @relation(fields: [teamId], references: [id])
+  teamId    String?
+  isAdmin   Boolean?
 }
 
-model team {
-  id         String   @default(cuid()) @id
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
-  name       String
-  members    member[]
+model Team {
+  id        String   @default(cuid()) @id
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  name      String
+  members   Member[]
 }

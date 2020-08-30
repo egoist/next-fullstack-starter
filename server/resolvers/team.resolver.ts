@@ -26,14 +26,14 @@ export class TeamResolver {
       where: {
         members: {
           some: {
-            user_id: {
+            userId: {
               equals: userId,
             },
           },
         },
       },
       orderBy: {
-        created_at: 'desc',
+        createdAt: 'desc',
       },
     })
     // Create a default team for this user if they don't have one
@@ -43,7 +43,7 @@ export class TeamResolver {
           name: `Personal Team`,
           members: {
             create: {
-              is_admin: true,
+              isAdmin: true,
               user: {
                 connect: {
                   id: userId,

@@ -1,5 +1,5 @@
 export type {
-  user as ModelUser,
-  member as ModelMember,
-  team as ModelTeam,
+  User as ModelUser,
+  Member as ModelMember,
+  Team as ModelTeam,
 } from '@prisma/client'
