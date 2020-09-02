@@ -39,7 +39,13 @@ It will create a database matching the config in `.env` file, feel free to updat
 ### Development
 
 ```bash
+# Install dependencies
 yarn
+
+# Apply migrations if you're running for the first time
+yarn migrate:up
+
+# Start Next.js
 yarn dev
 ```
 
@@ -84,7 +90,7 @@ Rollback the most recent migration.
 │   └── schema.prisma         # Database schema
 ├── scripts
 │   └── with-env.js           # Run command with `.env` file loaded
-├── server 
+├── server
 │   ├── auth.ts               # Auth helpers
 │   ├── constants.ts
 │   ├── db.types.ts           # Types from Prisma
