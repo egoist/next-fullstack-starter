@@ -118,11 +118,11 @@ Every time you create a new resolver file you need to add it to `src/pages/api/g
 
 #### Variable casing
 
-Use snake_case in `schema.prisma` and GraphQL types, otherwise camelCase is preferred.
+Use PascalCase for Component name, otherwise camelCase is preferred.
 
 #### Filename casing
 
-Use PascalCase for React Components, other wise use kebab-case.
+Use PascalCase for React component files, other wise use kebab-case.
 
 ## License
 
