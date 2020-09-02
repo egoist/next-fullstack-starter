@@ -4,6 +4,13 @@ Next.js + Prisma + TailwindCSS + (Type-)GraphQL
 
 This project serves as the starting point of some of my SaaS products, so I'm continuously improving it.
 
+## Features
+
+- Social auth (via Passport.js)
+- Simple team management
+- [Type-first approach for writing GraphQL schema](https://typegraphql.com/)
+- More to come..
+
 ## Documentation
 
 ### Prerequisites without Docker
