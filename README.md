@@ -127,6 +127,20 @@ We create a GraphQL at `/api/graphql` using Apollo Server and Type GraphQL, Grap
 
 Every time you create a new resolver file you need to add it to `src/pages/api/graphql.ts`.
 
+On the client-side we use Apollo Client to execute GraphQL query, you should write GraphQL queries using SDL in `src/graphql` and run `yarn g:graphql` to generate corresponding React hooks, and import the generated hooks from `src/generated/graphql` like this:
+
+```ts
+import { useCurrentUserQuery } from '@/generated/graphql'
+
+const currentUser = useCurrentUserQuery()
+
+if (currentUser.loading) {
+  return null
+}
+
+return <div>{currentUser.data.currentUser.name}</div>
+```
+
 ### Style guide
 
 #### Variable casing
