@@ -49,7 +49,7 @@ passport.use(
       callbackURL: `${process.env.NEXT_PUBLIC_APP_URL}/api/auth/github/callback`,
     },
     async (accessToken, refreshToken, profile, cb) => {
-      const user = await getUserByProviderProfile(profile, 'google')
+      const user = await getUserByProviderProfile(profile, 'github')
       cb(null, user)
     },
   ),
