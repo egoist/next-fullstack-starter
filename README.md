@@ -78,7 +78,7 @@ Save migrate files, tyoically you should run this after making changes to `prism
 
 Applying local migrations to the database, run this after `yarn migrate:save`.
 
-#### `yarn migrate:rollup`
+#### `yarn migrate:rollback`
 
 Rollback the most recent migration.
 
