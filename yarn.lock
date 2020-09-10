@@ -1889,7 +1889,7 @@
     "@types/node" "*"
     form-data "^3.0.0"
 
-"@types/node@*", "@types/node@^14.0.14", "@types/node@^14.6.0", "@types/node@^14.6.4":
+"@types/node@*", "@types/node@^14.6.0", "@types/node@^14.6.4":
   version "14.6.4"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.6.4.tgz#a145cc0bb14ef9c4777361b7bbafa5cf8e3acb5a"
   integrity sha512-Wk7nG1JSaMfMpoMJDKUsWYugliB2Vy55pdjLpmLixeyMi7HizW2I/9QoxsPCkXl3dO+ZOVqPumKaDUv5zJu2uQ==
@@ -6022,12 +6022,11 @@ neo-async@2.6.1, neo-async@^2.5.0, neo-async@^2.6.1:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.1.tgz#ac27ada66167fa8849a6addd837f6b189ad2081c"
   integrity sha512-iyam8fBuCUpWeKPGpaNMetEocMt364qkCsfL9JuhjXX6dRnguRVOfk2GZaDpPjcOKiiXCPINZC1GczQ7iTq3Zw==
 
-next-connect@^0.8.1:
-  version "0.8.1"
-  resolved "https://registry.yarnpkg.com/next-connect/-/next-connect-0.8.1.tgz#def20d9045fb8043855a92a3bae40d88ef3f9d3b"
-  integrity sha512-V5O45OV6+neCb/iXfPUpfcFirSJ4czr02+Xay7TyW/8Ybq9KzDLPWpU36lkvPbwNhpdxRXAi/j907c8MIURMww==
+next-connect@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/next-connect/-/next-connect-0.9.0.tgz#d110cf177decebbfb3b36eff5deb1496de40bf29"
+  integrity sha512-fuWVJNTCYXG0wbzHFuf1vYUr8BFUAa5+jbaOzTQpN9lyIeZbww7EM/bZeOUlgd8C/A78SKa+f/GEwPK063zhsQ==
   dependencies:
-    "@types/node" "^14.0.14"
     trouter "^3.1.0"
 
 next-tick@~1.0.0:
