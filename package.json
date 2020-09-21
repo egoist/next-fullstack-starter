@@ -58,7 +58,7 @@
     "dotenv": "^8.2.0",
     "dotenv-expand": "^5.1.0",
     "husky": "^4.3.0",
-    "lint-staged": "^10.3.0",
+    "lint-staged": "^10.4.0",
     "prettier": "^2.1.2",
     "tailwindcss": "^1.8.10",
     "ts-loader": "^8.0.4",
