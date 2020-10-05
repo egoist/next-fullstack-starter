@@ -22,7 +22,7 @@
     ]
   },
   "dependencies": {
-    "@apollo/client": "^3.2.1",
+    "@apollo/client": "^3.2.2",
     "@prisma/client": "2.8.0",
     "@hapi/iron": "^6.0.0",
     "apollo-server-micro": "^2.18.1",
