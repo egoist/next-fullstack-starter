@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.2.1",
-    "@prisma/client": "2.7.1",
+    "@prisma/client": "2.8.0",
     "@hapi/iron": "^6.0.0",
     "apollo-server-micro": "^2.18.1",
     "class-validator": "^0.12.2",
