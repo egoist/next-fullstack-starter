@@ -38,7 +38,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "reflect-metadata": "^0.1.13",
-    "type-graphql": "^1.0.0"
+    "type-graphql": "^1.1.0"
   },
   "devDependencies": {
     "@egoist/prettier-config": "^0.1.0",
