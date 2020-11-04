@@ -30,7 +30,7 @@
     "cookie": "^0.4.1",
     "graphql": "^15.4.0",
     "graphql-tag": "^2.11.0",
-    "next": "^9.5.5",
+    "next": "^10.0.0",
     "next-connect": "^0.9.0",
     "passport": "^0.4.1",
     "passport-github": "^1.1.0",
