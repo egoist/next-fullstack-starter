@@ -31,7 +31,7 @@
     "graphql": "^15.4.0",
     "graphql-tag": "^2.11.0",
     "next": "^10.0.0",
-    "next-connect": "^0.9.0",
+    "next-connect": "^0.9.1",
     "passport": "^0.4.1",
     "passport-github": "^1.1.0",
     "passport-google-oauth20": "^2.0.0",
