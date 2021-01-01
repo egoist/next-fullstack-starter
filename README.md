@@ -40,7 +40,7 @@ yarn migrate:deploy
 
 # Start Next.js
 yarn dev:server
-yarn dev
+yarn dev:app
 ```
 
 ### NPM Scripts

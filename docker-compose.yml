@@ -11,7 +11,7 @@ services:
     networks:
       - myapp
     ports:
-      - '${DB_PORT}:5432'
+      - '${DATABASE_PORT}:5432'
 
   redis:
     image: redis:6-alpine
