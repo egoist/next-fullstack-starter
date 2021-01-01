@@ -1,6 +1,6 @@
 # Next FullStack Starter
 
-Next.js + Prisma + TailwindCSS + (Type-)GraphQL
+Next.js + TypeORM + TailwindCSS + (Type-)GraphQL
 
 This project serves as the starting point of some of my SaaS products, so I'm continuously improving it.
 
@@ -13,7 +13,7 @@ This project serves as the starting point of some of my SaaS products, so I'm co
 
 ## Documentation
 
-### Prerequisites without Docker
+### Prerequisites
 
 Moving `.env.example` to `.env`.
 
@@ -29,20 +29,6 @@ DATABASE_NAME=mydb
 
 You can also customize it by updating `.env` file.
 
-### Prerequisites with Docker
-
-Moving `.env.example` to `.env`.
-
-Change `myapp` in `docker-compose.yml` to your custom app name which is used to name containers.
-
-Then install Docker and run following command to start the database container:
-
-```bash
-docker-compose up -d
-```
-
-It will create a database matching the config in `.env` file, feel free to update it and rerun above command.
-
 ### Development
 
 ```bash
@@ -50,9 +36,10 @@ It will create a database matching the config in `.env` file, feel free to updat
 yarn
 
 # Apply migrations if you're running for the first time
-yarn migrate:up
+yarn migrate:deploy
 
 # Start Next.js
+yarn dev:server
 yarn dev
 ```
 

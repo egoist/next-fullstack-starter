@@ -1,9 +1,8 @@
 import 'reflect-metadata'
 import { ApolloServer } from 'apollo-server-micro'
 import { NextApiHandler } from 'next'
-import { buildSchema } from 'type-graphql'
-import { UserResolver } from '@server/resolvers/user.resolver'
-import { TeamResolver } from '@server/resolvers/team.resolver'
+import { getSchema } from '@server/lib/graphql'
+import { getServerSession } from '@server/lib/auth'
 
 export const config = {
   api: {
@@ -20,19 +19,22 @@ const apiHandler: NextApiHandler = async (req, res) => {
     return handler(req, res)
   }
 
-  const schema = await buildSchema({
-    resolvers: [UserResolver, TeamResolver],
-  })
+  const schema = await getSchema()
 
   const apolloServer = new ApolloServer({
     schema,
-    playground: !isProd,
     tracing: !isProd,
-    context({ req, res }) {
+    playground: {
+      settings: {
+        'request.credentials': 'include',
+      },
+    },
+    async context({ req, res }) {
+      const { user } = await getServerSession(req)
       return {
         req,
         res,
-        user: req.user,
+        user,
       }
     },
   })

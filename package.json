@@ -1,14 +1,15 @@
 {
   "private": true,
   "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start",
-    "with-env": "node scripts/with-env",
-    "migrate:save": "node scripts/with-env prisma migrate save --experimental",
-    "migrate:up": "node scripts/with-env prisma migrate up --experimental",
-    "migrate:rollback": "node scripts/with-env prisma migrate rollback --experimental",
-    "g:prisma": "prisma generate",
+    "dev:app": "next",
+    "dev:server": "ttsc -p server --watch",
+    "build:app": "next build",
+    "build:server": "ttsc -p server",
+    "build": "npm run build:server && npm run build:app",
+    "start": "next start --port $PORT",
+    "migrate:save": "typeorm migration:generate -n",
+    "migrate:deploy": "typeorm migration:run",
+    "migrate:rollback": "typeorm migration:revert",
     "g:gql": "graphql-codegen --config graphql-codegen.yml"
   },
   "husky": {
@@ -22,8 +23,6 @@
     ]
   },
   "dependencies": {
-    "@apollo/client": "^3.3.6",
-    "@prisma/client": "2.13.1",
     "@hapi/iron": "^6.0.0",
     "apollo-server-micro": "^2.19.1",
     "class-validator": "^0.12.2",
@@ -38,30 +37,34 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "reflect-metadata": "^0.1.13",
-    "type-graphql": "^1.1.1"
+    "type-graphql": "^1.1.1",
+    "typeorm": "^0.2.29",
+    "urql": "^1.11.4"
   },
   "devDependencies": {
     "@egoist/prettier-config": "^0.1.0",
-    "@graphql-codegen/cli": "1.20.0",
+    "@graphql-codegen/cli": "^1.20.0",
     "@graphql-codegen/introspection": "1.18.1",
-    "@graphql-codegen/typescript": "1.19.0",
+    "@graphql-codegen/typescript": "1.20.0",
     "@graphql-codegen/typescript-operations": "1.17.13",
     "@graphql-codegen/typescript-react-apollo": "^2.2.1",
-    "@prisma/cli": "2.13.1",
     "@types/cookie": "^0.4.0",
-    "@types/node": "^14.14.16",
-    "@types/passport": "^1.0.5",
+    "@types/node": "^14.14.17",
+    "@types/passport": "1.0.4",
     "@types/passport-github": "^1.1.5",
     "@types/passport-google-oauth20": "^2.0.6",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "autoprefixer": "^10.1.0",
     "dotenv": "^8.2.0",
     "dotenv-expand": "^5.1.0",
     "husky": "^4.3.6",
     "lint-staged": "^10.5.3",
+    "postcss": "^8.2.2",
     "prettier": "^2.2.1",
-    "tailwindcss": "^1.9.6",
-    "ts-loader": "^8.0.10",
-    "typescript": "^4.1.3"
+    "tailwindcss": "^2.0.2",
+    "ttypescript": "^1.5.12",
+    "typescript": "^4.1.3",
+    "typescript-transform-paths": "^2.1.0"
   }
 }

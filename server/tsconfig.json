@@ -2,26 +2,23 @@
   "compilerOptions": {
     "target": "es2020",
     "module": "commonjs",
-    "jsx": "preserve",
     "strict": true,
+    "outDir": "../server-dist",
     "strictPropertyInitialization": false,
+    "declaration": true,
     "skipLibCheck": true,
     "moduleResolution": "node",
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "forceConsistentCasingInFileNames": true,
+    "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@server/*": ["./server/*"],
-      "@src/*": ["./src/*"]
+      "@server/*": ["./*"]
     },
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "noEmit": true,
     "resolveJsonModule": true,
-    "isolatedModules": true
+    "plugins": [{ "transform": "typescript-transform-paths" }]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "include": ["**/*.ts", "../types.d.ts"]
 }

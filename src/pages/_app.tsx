@@ -1,13 +1,13 @@
 import '../css/tailwind.css'
-import { ApolloProvider } from '@apollo/client'
-import { useApollo } from '@/lib/apollo-client'
+import { Provider as UrqlProvider } from 'urql'
+import { useUrqlClient } from '@src/lib/urql-client'
 
-const App = ({ Component, pageProps }) => {
-  const apollo = useApollo()
+const App = ({ Component, pageProps }: any) => {
+  const urqlClient = useUrqlClient()
   return (
-    <ApolloProvider client={apollo}>
+    <UrqlProvider value={urqlClient}>
       <Component {...pageProps} />
-    </ApolloProvider>
+    </UrqlProvider>
   )
 }
 

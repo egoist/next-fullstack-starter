@@ -1,32 +1,21 @@
-import { AUTH_COOKIE_NAME } from '@server/constants'
-import { AuthenticationError } from 'apollo-server-micro'
-import { IncomingMessage } from 'http'
-import { NextApiRequest } from 'next'
-import { parse } from 'cookie'
-import { parseSecureToken } from '@server/auth'
-import { ModelMember, ModelUser } from '@server/db.types'
-import { prisma } from '@server/prisma'
+import { AuthenticationError, ApolloError } from 'apollo-server-micro'
+import { Context } from '@server/decorators/gql-context'
 
-export type ModelUserWithMembers = ModelUser & { members: ModelMember[] }
-
-export async function requireAuth(
-  req: NextApiRequest | IncomingMessage,
-): Promise<ModelUserWithMembers | null> {
-  const token = parse(req.headers.cookie || '')[AUTH_COOKIE_NAME]
-  const authUser = await parseSecureToken(token)
-
-  if (!authUser) {
-    throw new AuthenticationError(`Authentication Error`)
+export function requireAuth(context: Context) {
+  if (!context.user) {
+    throw new AuthenticationError(`Unauthenticated`)
   }
 
-  const user = await prisma.user.findOne({
-    where: { id: authUser.userId },
-    include: {
-      members: true,
-    },
-  })
-  if (!user) {
-    throw new AuthenticationError(`User not found`)
+  return context.user
+}
+
+const ADMIN_IDS = [1]
+export function requireAdmin(user: { id: number }) {
+  if (!ADMIN_IDS.includes(user.id)) {
+    throw new ApolloError(`Require admin permission`)
   }
-  return user
+}
+
+export function isAdmin(user: { id: number }) {
+  return ADMIN_IDS.includes(user.id)
 }

@@ -1,7 +1,7 @@
 declare namespace NodeJS {
   interface ProcessEnv {
     // Additional environment variables
-    HASH_KEY: string
+    ENCRYPT_SECRET: string
     NEXT_PUBLIC_APP_NAME: string
     NEXT_PUBLIC_APP_URL: string
   }
