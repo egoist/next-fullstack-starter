@@ -20,11 +20,11 @@ Moving `.env.example` to `.env`.
 Then get your database ready, install PostgreSQL and make sure you have a user and database matching following config:
 
 ```
-DATABASE_USER=postgres
-DATABASE_PASS=random
-DATABASE_HOST=localhost
-DATABASE_PORT=5432
-DATABASE_NAME=mydb
+DB_USER=postgres
+DB_PASS=random
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=mydb
 ```
 
 You can also customize it by updating `.env` file.
@@ -40,7 +40,7 @@ yarn migrate:deploy
 
 # Start Next.js
 yarn dev:server
-yarn dev
+yarn dev:app
 ```
 
 ### NPM Scripts
