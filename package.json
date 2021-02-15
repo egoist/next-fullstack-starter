@@ -61,7 +61,7 @@
     "dotenv-expand": "^5.1.0",
     "husky": "^4.3.8",
     "lint-staged": "^10.5.4",
-    "postcss": "^8.2.5",
+    "postcss": "^8.2.6",
     "prettier": "^2.2.1",
     "tailwindcss": "^2.0.3",
     "ttypescript": "^1.5.12",
