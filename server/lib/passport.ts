@@ -7,7 +7,7 @@ import { serialize } from 'cookie'
 import { getRepos } from '../orm'
 import { NextApiRequest, NextApiResponse } from 'next'
 
-passport.serializeUser<any, number>((user, done) => {
+passport.serializeUser<any>((user, done) => {
   done(null, user.id)
 })
 

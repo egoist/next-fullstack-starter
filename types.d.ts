@@ -8,3 +8,9 @@ declare namespace NodeJS {
 }
 
 type $TsFixMe = any
+
+declare namespace Express {
+  interface User {
+    id: number
+  }
+}
