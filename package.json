@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@hapi/iron": "^6.0.0",
-    "apollo-server-micro": "^2.21.1",
+    "apollo-server-micro": "^2.22.2",
     "class-validator": "^0.12.2",
     "cookie": "^0.4.1",
     "graphql": "^15.5.0",
