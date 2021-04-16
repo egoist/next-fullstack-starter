@@ -7,12 +7,8 @@
     "prisma-client": "prisma generate",
     "migrate-dev": "prisma migrate dev",
     "migrate-deploy": "prisma migrate deploy",
-    "gql-gen": "graphql-codegen --config graphql-codegen.yml"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    "gql-gen": "graphql-codegen --config graphql-codegen.yml",
+    "prepare": "husky install"
   },
   "lint-staged": {
     "*.{ts,tsx,json,md,css}": [
@@ -62,7 +58,6 @@
     "prisma": "^2.21.2",
     "tailwindcss": "^2.1.1",
     "ts-loader": "^8.1.0",
-    "typescript": "^4.2.4",
-    "typescript-transform-paths": "^2.2.3"
+    "typescript": "^4.2.4"
   }
 }
