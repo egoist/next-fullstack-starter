@@ -4547,10 +4547,10 @@ native-url@0.3.4:
   dependencies:
     querystring "^0.2.0"
 
-next-connect@^0.9.1:
-  version "0.9.1"
-  resolved "https://registry.yarnpkg.com/next-connect/-/next-connect-0.9.1.tgz#884faaf3df3af37838568009b84696c372e20272"
-  integrity sha512-CPEdciM43y9oHKxE/KVtlB+vbWwTCYqPr8/EjzoMtSRIi0s7XhdSrY6VShlACnnsJzsAr/RZnL3/xFC/vjgZUQ==
+next-connect@^0.10.1:
+  version "0.10.1"
+  resolved "https://registry.yarnpkg.com/next-connect/-/next-connect-0.10.1.tgz#59628f98a184694a9415bef48076ed0fe10902ce"
+  integrity sha512-gNpH53DtYfZhfOzmAVrE3jiEDj7kGtodeGcyUd2gvPsB+6/hQSmRVekCzNuF20+vpHnkpE8VUDQmzARzzqwpYA==
   dependencies:
     trouter "^3.1.0"
 

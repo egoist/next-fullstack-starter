@@ -27,7 +27,7 @@
     "cookie": "^0.4.1",
     "graphql": "^15.5.0",
     "next": "^10.1.3",
-    "next-connect": "^0.9.1",
+    "next-connect": "^0.10.1",
     "passport": "^0.4.1",
     "passport-github": "^1.1.0",
     "passport-google-oauth20": "^2.0.0",
