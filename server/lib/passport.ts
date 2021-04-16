@@ -17,7 +17,7 @@ if (process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET) {
       {
         clientID: process.env.GOOGLE_CLIENT_ID,
         clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-        callbackURL: `${process.env.NEXT_PUBLIC_APP_URL}/api/auth/google/callback`,
+        callbackURL: `/api/auth/google/callback`,
       },
       async (accessToken, refreshToken, profile, cb) => {
         const user = await getUserByProviderProfile(profile, 'google')
@@ -33,7 +33,7 @@ if (process.env.GITHUB_CLIENT_ID && process.env.GITHUB_CLIENT_SECRET) {
       {
         clientID: process.env.GITHUB_CLIENT_ID,
         clientSecret: process.env.GITHUB_CLIENT_SECRET,
-        callbackURL: `${process.env.NEXT_PUBLIC_APP_URL}/api/auth/github/callback`,
+        callbackURL: `/api/auth/github/callback`,
       },
       async (accessToken, refreshToken, profile, cb) => {
         const user = await getUserByProviderProfile(profile, 'github')
