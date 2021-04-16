@@ -1,4 +1,4 @@
-import { handleSuccessfulLogin, passport } from '@server/lib/passport'
+import { handleSuccessfulLogin, passport } from '$server/lib/passport'
 import { NextApiRequest, NextApiResponse } from 'next'
 import connect from 'next-connect'
 

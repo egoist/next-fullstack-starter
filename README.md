@@ -106,7 +106,7 @@ Rollback the most recent migration.
 └── yarn.lock
 ```
 
-We also added two Next.js/TS aliases: `@` for `src` folder and `@server` for `server` folder.
+We also added two Next.js/TS aliases: `$src` for `src` folder and `$server` for `server` folder.
 
 ### GraphQL
 

@@ -1,32 +1,15 @@
-import { buildSchema } from 'type-graphql'
-import { DocumentNode, execute, GraphQLSchema } from 'graphql'
-import { Context } from '@server/decorators/gql-context'
-import { CurrentUserResolver } from '@server/resolvers/current-user.resolver'
-
-let schema: GraphQLSchema | undefined
-
-export const getSchema = async () => {
-  const _schema =
-    schema ||
-    (await buildSchema({
-      resolvers: [CurrentUserResolver],
-    }))
-
-  if (process.env.NODE_ENV === 'production') {
-    schema = _schema
-  }
-
-  return _schema
-}
+import { DocumentNode, execute } from 'graphql'
+import { Context } from '$server/decorators/gql-context'
+import { schema } from './singletion'
 
 export const queryGraphql = async <TData = any, TVariables = any>(
   query: DocumentNode,
   variableValues: TVariables,
   context: Context,
 ) => {
-  const schema = await getSchema()
+  await schema.wait
   const { data } = (await execute({
-    schema,
+    schema: schema.value,
     document: query,
     variableValues,
     contextValue: context,

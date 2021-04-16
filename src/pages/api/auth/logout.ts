@@ -1,4 +1,4 @@
-import { AUTH_COOKIE_NAME } from '@server/lib/constants'
+import { AUTH_COOKIE_NAME } from '$server/lib/constants'
 import { serialize } from 'cookie'
 import { NextApiHandler } from 'next'
 

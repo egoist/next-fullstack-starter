@@ -1,9 +1,12 @@
 declare namespace NodeJS {
   interface ProcessEnv {
     // Additional environment variables
-    ENCRYPT_SECRET: string
+    AUTH_SECRET: string
     NEXT_PUBLIC_APP_NAME: string
     NEXT_PUBLIC_APP_URL: string
+  }
+  interface Global {
+    _singletons: Record<string, any>
   }
 }
 

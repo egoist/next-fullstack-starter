@@ -1,7 +1,7 @@
 import { Field, Int, ObjectType, Query, Resolver } from 'type-graphql'
-import { GqlContext } from '@server/decorators/gql-context'
-import type { Context } from '@server/decorators/gql-context'
-import { requireAuth } from '@server/guards/require-auth'
+import { GqlContext } from '$server/decorators/gql-context'
+import type { Context } from '$server/decorators/gql-context'
+import { requireAuth } from '$server/guards/require-auth'
 
 @ObjectType()
 class CurrentUser {
@@ -11,11 +11,8 @@ class CurrentUser {
   @Field()
   email: string
 
-  @Field()
-  username: string
-
   @Field({ nullable: true })
-  avatar?: string
+  avatarUrl?: string
 }
 
 @Resolver()

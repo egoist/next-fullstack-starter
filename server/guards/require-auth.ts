@@ -1,5 +1,5 @@
 import { AuthenticationError, ApolloError } from 'apollo-server-micro'
-import { Context } from '@server/decorators/gql-context'
+import { Context } from '$server/decorators/gql-context'
 
 export function requireAuth(context: Context) {
   if (!context.user) {

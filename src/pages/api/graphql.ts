@@ -1,8 +1,8 @@
 import 'reflect-metadata'
 import { ApolloServer } from 'apollo-server-micro'
 import { NextApiHandler } from 'next'
-import { getSchema } from '@server/lib/graphql'
-import { getServerSession } from '@server/lib/auth'
+import { getServerSession } from '$server/lib/auth'
+import { schema } from '$server/lib/singletion'
 
 export const config = {
   api: {
@@ -19,10 +19,9 @@ const apiHandler: NextApiHandler = async (req, res) => {
     return handler(req, res)
   }
 
-  const schema = await getSchema()
-
+  await schema.wait
   const apolloServer = new ApolloServer({
-    schema,
+    schema: schema.value,
     tracing: !isProd,
     playground: {
       settings: {

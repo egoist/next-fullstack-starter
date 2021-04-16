@@ -4,8 +4,8 @@ import { Strategy as GitHubStrategy } from 'passport-github'
 import { AUTH_COOKIE_NAME } from './constants'
 import { createSecureToken } from './auth'
 import { serialize } from 'cookie'
-import { getRepos } from '../orm'
 import { NextApiRequest, NextApiResponse } from 'next'
+import { prisma } from './singletion'
 
 passport.serializeUser<any>((user, done) => {
   done(null, user.id)
@@ -48,55 +48,52 @@ async function getUserByProviderProfile(
   provider: 'github' | 'google',
 ) {
   const email = profile.emails![0].value
-  const avatar = profile.photos![0].value
+  const avatarUrl = profile.photos![0].value
 
-  const providerKey = `${provider}UserId` as 'githubUserId' | 'googleUserId'
+  const providerKey = `${provider}UserId`
 
-  const repos = await getRepos()
   // Find one by provider user id
-  let existing = await repos.user.findOne({
+  let existing = await prisma.user.findUnique({
     where: {
       [providerKey]: profile.id,
     },
   })
   // Otherwise find one with the same email and link them
   if (!existing) {
-    existing = await repos.user.findOne({
+    existing = await prisma.user.findUnique({
       where: {
         email,
       },
     })
     if (existing) {
-      await repos.user.update(
-        {
-          id: existing.id,
-        },
-        {
+      await prisma.user.update({
+        where: { id: existing.id },
+        data: {
           [providerKey]: profile.id,
         },
-      )
+      })
     }
   }
 
   if (!existing) {
-    existing = repos.user.create({
-      email,
-      name: profile.displayName || profile.username,
-      [providerKey]: profile.id,
-      avatar,
+    existing = await prisma.user.create({
+      data: {
+        email,
+        [providerKey]: profile.id,
+        avatarUrl,
+      },
     })
-    await repos.user.save(existing)
   }
 
-  if (avatar && existing.avatar !== avatar) {
-    await repos.user.update(
-      {
+  if (avatarUrl && existing.avatarUrl !== avatarUrl) {
+    await prisma.user.update({
+      where: {
         id: existing.id,
       },
-      {
-        avatar,
+      data: {
+        avatarUrl,
       },
-    )
+    })
   }
 
   return existing

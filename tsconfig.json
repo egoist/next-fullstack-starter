@@ -13,8 +13,8 @@
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "paths": {
-      "@server/*": ["./server/*"],
-      "@src/*": ["./src/*"]
+      "$server/*": ["./server/*"],
+      "$src/*": ["./src/*"]
     },
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,

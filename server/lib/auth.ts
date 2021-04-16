@@ -2,15 +2,15 @@ import { IncomingMessage } from 'http'
 import cookie from 'cookie'
 import { NextApiRequest } from 'next'
 import Iron from '@hapi/iron'
-import { getRepos } from '@server/orm'
 import { AUTH_COOKIE_NAME } from './constants'
+import { prisma } from './singletion'
 
 export type CookieUserPayload = {
   userId: number
 }
 
 export function createSecureToken(payload: CookieUserPayload) {
-  const token = Iron.seal(payload, process.env.ENCRYPT_SECRET, Iron.defaults)
+  const token = Iron.seal(payload, process.env.AUTH_SECRET, Iron.defaults)
   return token
 }
 
@@ -19,7 +19,7 @@ export async function parseSecureToken(
 ): Promise<CookieUserPayload | null> {
   if (!token) return null
   try {
-    return Iron.unseal(token, process.env.ENCRYPT_SECRET, Iron.defaults)
+    return Iron.unseal(token, process.env.AUTH_SECRET, Iron.defaults)
   } catch (error) {
     ;`
     console.error('auth error', error)`
@@ -29,8 +29,7 @@ export async function parseSecureToken(
 
 export type AuthUser = {
   id: number
-  name: string
-  avatar?: string
+  avatarUrl?: string | null
 }
 
 export const getServerSession = async (
@@ -44,8 +43,7 @@ export const getServerSession = async (
     return { user: null }
   }
 
-  const repos = await getRepos()
-  const user = await repos.user.findOne({
+  const user = await prisma.user.findUnique({
     where: {
       id: cookieUserPayload.userId,
     },
@@ -55,8 +53,7 @@ export const getServerSession = async (
     user: user
       ? {
           id: user.id,
-          name: user.name,
-          avatar: user.avatar,
+          avatarUrl: user.avatarUrl,
         }
       : null,
   }

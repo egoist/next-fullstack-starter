@@ -1,4 +1,4 @@
-import { AuthUser } from '@server/lib/auth'
+import { AuthUser } from '$server/lib/auth'
 import { NextApiRequest, NextApiResponse } from 'next'
 import { createParamDecorator } from 'type-graphql'
 
