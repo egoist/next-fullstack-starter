@@ -11,11 +11,34 @@ generator client {
 }
 
 model User {
-  id           Int      @id @default(autoincrement())
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
-  email        String   @unique
-  googleUserId String?  @unique
-  githubUserId String?  @unique
+  id           Int             @id @default(autoincrement())
+  createdAt    DateTime        @default(now())
+  updatedAt    DateTime        @updatedAt
+  email        String          @unique
+  googleUserId String?         @unique
+  githubUserId String?         @unique
   avatarUrl    String?
+  projects     Project[]
+  members      ProjectMember[]
+}
+
+model ProjectMember {
+  id        Int     @id @default(autoincrement())
+  user      User    @relation(fields: [userId], references: [id])
+  project   Project @relation(fields: [projectId], references: [id])
+  // Member role, e.g. `admin` or `member`
+  role      String
+  userId    Int
+  projectId String
+}
+
+model Project {
+  id        String          @id @default(cuid())
+  createdAt DateTime        @default(now())
+  updatedAt DateTime        @updatedAt
+  name      String
+  // The creator of this project
+  user      User            @relation(fields: [userId], references: [id])
+  userId    Int
+  members   ProjectMember[]
 }
