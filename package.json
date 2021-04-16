@@ -4,8 +4,9 @@
     "dev": "next",
     "build": "next build",
     "start": "next start --port $PORT",
-    "db-gen": "prisma generate",
+    "prisma-client": "prisma generate",
     "migrate-dev": "prisma migrate dev",
+    "migrate-deploy": "prisma migrate deploy",
     "gql-gen": "graphql-codegen --config graphql-codegen.yml"
   },
   "husky": {
