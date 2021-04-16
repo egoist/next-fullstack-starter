@@ -7,7 +7,7 @@ This project serves as the starting point of some of my SaaS products, so I'm co
 ## Features
 
 - Social auth (via Passport.js)
-- Simple team management
+- Query database with [Prisma](https://prisma.io)
 - [Type-first approach for writing GraphQL schema](https://typegraphql.com/)
 - More to come..
 
@@ -20,7 +20,7 @@ Moving `.env.example` to `.env`.
 Then get your database ready, install PostgreSQL and make sure you have a user and database matching the default one we use:
 
 ```
-DB_URL="postgresql://johndoe:randompassword@localhost:5432/mydb?schema=public"
+DB_URL="postgresql://postgres:pass@localhost:5432/mydb?schema=public"
 ```
 
 You can also customize it by updating `.env` file.
