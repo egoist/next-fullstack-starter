@@ -16,7 +16,7 @@ class CurrentUser {
 }
 
 @Resolver()
-export class CurrentUserResolver {
+export default class CurrentUserResolver {
   @Query((returns) => CurrentUser)
   async currentUser(@GqlContext() ctx: Context) {
     const user = requireAuth(ctx)
