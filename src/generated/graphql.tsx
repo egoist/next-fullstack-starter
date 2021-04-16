@@ -1,4 +1,4 @@
-import gql from 'graphql-tag'
+import { DocumentNode } from 'graphql'
 import * as Urql from 'urql'
 export type Maybe<T> = T | null
 export type Exact<T extends { [key: string]: unknown }> = {
@@ -39,15 +39,33 @@ export type CurrentUserQuery = { __typename?: 'Query' } & {
   >
 }
 
-export const CurrentUserDocument = gql`
-  query currentUser {
-    currentUser {
-      id
-      email
-      avatarUrl
-    }
-  }
-`
+export const CurrentUserDocument: DocumentNode = {
+  kind: 'Document',
+  definitions: [
+    {
+      kind: 'OperationDefinition',
+      operation: 'query',
+      name: { kind: 'Name', value: 'currentUser' },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'currentUser' },
+            selectionSet: {
+              kind: 'SelectionSet',
+              selections: [
+                { kind: 'Field', name: { kind: 'Name', value: 'id' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'email' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'avatarUrl' } },
+              ],
+            },
+          },
+        ],
+      },
+    },
+  ],
+}
 
 export function useCurrentUserQuery(
   options: Omit<Urql.UseQueryArgs<CurrentUserQueryVariables>, 'query'> = {},

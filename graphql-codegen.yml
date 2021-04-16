@@ -13,3 +13,4 @@ generates:
 config:
   withComponents: false
   withHooks: true
+  documentMode: documentNode
