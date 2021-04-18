@@ -10,35 +10,85 @@ generator client {
   provider = "prisma-client-js"
 }
 
+model Account {
+  id                 Int       @id @default(autoincrement())
+  compoundId         String    @unique @map(name: "compound_id")
+  userId             Int       @map(name: "user_id")
+  providerType       String    @map(name: "provider_type")
+  providerId         String    @map(name: "provider_id")
+  providerAccountId  String    @map(name: "provider_account_id")
+  refreshToken       String?   @map(name: "refresh_token")
+  accessToken        String?   @map(name: "access_token")
+  accessTokenExpires DateTime? @map(name: "access_token_expires")
+  createdAt          DateTime  @default(now()) @map(name: "created_at")
+  updatedAt          DateTime  @updatedAt @map(name: "updated_at")
+
+  @@index([providerAccountId], name: "providerAccountId")
+  @@index([providerId], name: "providerId")
+  @@index([userId], name: "userId")
+  @@map(name: "accounts")
+}
+
+model Session {
+  id           Int      @id @default(autoincrement())
+  userId       Int      @map(name: "user_id")
+  expires      DateTime
+  sessionToken String   @unique @map(name: "session_token")
+  accessToken  String   @unique @map(name: "access_token")
+  createdAt    DateTime @default(now()) @map(name: "created_at")
+  updatedAt    DateTime @updatedAt @map(name: "updated_at")
+
+  @@map(name: "sessions")
+}
+
 model User {
-  id           Int             @id @default(autoincrement())
-  createdAt    DateTime        @default(now())
-  updatedAt    DateTime        @updatedAt
-  email        String          @unique
-  googleUserId String?         @unique
-  githubUserId String?         @unique
-  avatarUrl    String?
-  projects     Project[]
-  members      ProjectMember[]
+  id            Int             @id @default(autoincrement())
+  name          String?
+  email         String?         @unique
+  emailVerified DateTime?       @map(name: "email_verified")
+  image         String?
+  createdAt     DateTime        @default(now()) @map(name: "created_at")
+  updatedAt     DateTime        @updatedAt @map(name: "updated_at")
+  members       ProjectMember[]
+  projects      Project[]
+
+  @@map(name: "users")
+}
+
+model VerificationRequest {
+  id         Int      @id @default(autoincrement())
+  identifier String
+  token      String   @unique
+  expires    DateTime
+  createdAt  DateTime @default(now()) @map(name: "created_at")
+  updatedAt  DateTime @updatedAt @map(name: "updated_at")
+
+  @@map(name: "verification_requests")
 }
 
 model ProjectMember {
-  id        Int     @id @default(autoincrement())
-  user      User    @relation(fields: [userId], references: [id])
-  project   Project @relation(fields: [projectId], references: [id])
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @map(name: "created_at")
+  updatedAt DateTime @updatedAt @map(name: "updated_at")
+  user      User     @relation(fields: [userId], references: [id])
+  project   Project  @relation(fields: [projectId], references: [id])
   // Member role, e.g. `admin` or `member`
   role      String
-  userId    Int
-  projectId String
+  userId    Int      @map(name: "user_id")
+  projectId String   @map(name: "project_id")
+
+  @@map(name: "project_memebrs")
 }
 
 model Project {
   id        String          @id @default(cuid())
-  createdAt DateTime        @default(now())
-  updatedAt DateTime        @updatedAt
+  createdAt DateTime        @default(now()) @map(name: "created_at")
+  updatedAt DateTime        @updatedAt @map(name: "updated_at")
   name      String
   // The creator of this project
   user      User            @relation(fields: [userId], references: [id])
-  userId    Int
+  userId    Int             @map(name: "user_id")
   members   ProjectMember[]
+
+  @@map(name: "projects")
 }

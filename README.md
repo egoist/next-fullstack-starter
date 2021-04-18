@@ -1,14 +1,15 @@
 # Next FullStack Starter
 
-Next.js + TypeORM + TailwindCSS + (Type-)GraphQL
+Next.js + Prisma + TailwindCSS + (Type-)GraphQL
 
 This project serves as the starting point of some of my SaaS products, so I'm continuously improving it.
 
 ## Features
 
-- Social auth (via Passport.js)
+- Authentication via [Next Auth](https://next-auth.js.org/).
 - Query database with [Prisma](https://prisma.io)
 - [Type-first approach for writing GraphQL schema](https://typegraphql.com/)
+- [TailwindCSS](https://tailwindcss.com)
 - More to come..
 
 ## Documentation
