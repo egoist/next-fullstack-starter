@@ -1,8 +1,9 @@
 import 'reflect-metadata'
 import { ApolloServer } from 'apollo-server-micro'
 import { NextApiHandler } from 'next'
-import { getServerSession } from '$server/lib/auth'
+import { getSession } from 'next-auth/client'
 import { schema } from '$server/lib/singletion'
+import { getCurrentUser } from '$server/lib/auth'
 
 export const config = {
   api: {
@@ -29,7 +30,7 @@ const apiHandler: NextApiHandler = async (req, res) => {
       },
     },
     async context({ req, res }) {
-      const { user } = await getServerSession(req)
+      const user = await getCurrentUser(req)
       return {
         req,
         res,
