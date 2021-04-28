@@ -35,7 +35,7 @@
     "@graphql-codegen/cli": "^1.21.4",
     "@graphql-codegen/introspection": "1.18.2",
     "@graphql-codegen/typescript": "1.22.0",
-    "@graphql-codegen/typescript-operations": "1.17.15",
+    "@graphql-codegen/typescript-operations": "1.17.16",
     "@graphql-codegen/typescript-urql": "^2.0.6",
     "@types/next-auth": "^3.15.0",
     "@types/node": "^14.14.37",
