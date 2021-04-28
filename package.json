@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@egoist/prettier-config": "^0.1.0",
-    "@graphql-codegen/cli": "^1.21.3",
+    "@graphql-codegen/cli": "^1.21.4",
     "@graphql-codegen/introspection": "1.18.1",
     "@graphql-codegen/typescript": "1.21.1",
     "@graphql-codegen/typescript-operations": "1.17.15",
