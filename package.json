@@ -34,7 +34,7 @@
     "@egoist/prettier-config": "^0.1.0",
     "@graphql-codegen/cli": "^1.21.4",
     "@graphql-codegen/introspection": "1.18.1",
-    "@graphql-codegen/typescript": "1.21.1",
+    "@graphql-codegen/typescript": "1.22.0",
     "@graphql-codegen/typescript-operations": "1.17.15",
     "@graphql-codegen/typescript-urql": "^2.0.5",
     "@types/next-auth": "^3.15.0",
