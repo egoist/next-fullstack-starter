@@ -49,7 +49,7 @@
     "dotenv-expand": "^5.1.0",
     "husky": "^6.0.0",
     "lint-staged": "^10.5.4",
-    "postcss": "^8.2.9",
+    "postcss": "^8.2.13",
     "preact": "^10.5.13",
     "prettier": "^2.2.1",
     "prisma": "^2.21.2",
