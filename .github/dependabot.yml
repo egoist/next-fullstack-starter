@@ -1,0 +1,40 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: weekly
+    time: "21:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: next-auth
+    versions:
+    - 3.17.2
+  - dependency-name: "@types/node"
+    versions:
+    - 15.0.0
+  - dependency-name: urql
+    versions:
+    - 2.0.1
+    - 2.0.2
+  - dependency-name: "@tailwindcss/jit"
+    versions:
+    - 0.1.18
+  - dependency-name: typeorm
+    versions:
+    - 0.2.30
+    - 0.2.31
+    - 0.2.32
+  - dependency-name: husky
+    versions:
+    - 5.0.9
+    - 5.1.1
+    - 5.1.2
+    - 5.1.3
+    - 5.2.0
+  - dependency-name: next
+    versions:
+    - 10.0.9
+  - dependency-name: next-connect
+    versions:
+    - 0.10.0
