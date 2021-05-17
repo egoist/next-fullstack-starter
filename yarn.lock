@@ -4641,15 +4641,14 @@ native-url@0.3.4:
   dependencies:
     querystring "^0.2.0"
 
-next-auth@*, next-auth@^3.21.0:
-  version "3.21.0"
-  resolved "https://registry.yarnpkg.com/next-auth/-/next-auth-3.21.0.tgz#898f86f4a850826c035c088288aff766d41e0a03"
-  integrity sha512-x5liry5HHa91/KaJZYHaYdYCQB76OWtuGnCyJeobSLjoXGeu/CQucTgWUGh3y8h4B+WTSlufM2LipambYnPu1g==
+next-auth@*, next-auth@^3.23.0:
+  version "3.23.0"
+  resolved "https://registry.yarnpkg.com/next-auth/-/next-auth-3.23.0.tgz#6d8e55c0e7105939b2364fff94e87f32cd5f98c3"
+  integrity sha512-bjgse0nHQ/HVKbVwCVA7h2ZVwJZaKRPu+3tgvQdlznlZp6hhHfVTx1yXhI2NopHas3dq3juFBxGCh8Ex2kc45g==
   dependencies:
     "@babel/runtime" "^7.14.0"
     "@next-auth/prisma-legacy-adapter" canary
     "@next-auth/typeorm-legacy-adapter" canary
-    crypto-js "^4.0.0"
     futoin-hkdf "^1.3.2"
     jose "^1.27.2"
     jsonwebtoken "^8.5.1"
@@ -4659,8 +4658,6 @@ next-auth@*, next-auth@^3.21.0:
     preact "^10.4.1"
     preact-render-to-string "^5.1.14"
     querystring "^0.2.0"
-    require_optional "^1.0.1"
-    typeorm "^0.2.30"
 
 next-connect@^0.10.1:
   version "0.10.1"
