@@ -38,7 +38,7 @@
     "@graphql-codegen/typescript-operations": "1.17.16",
     "@graphql-codegen/typescript-urql": "^2.0.6",
     "@types/next-auth": "^3.15.0",
-    "@types/node": "^14.14.37",
+    "@types/node": "^15.3.0",
     "@types/passport": "1.0.6",
     "@types/passport-github": "^1.1.5",
     "@types/passport-google-oauth20": "^2.0.7",
