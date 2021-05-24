@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@hapi/iron": "^6.0.0",
-    "@prisma/client": "^2.22.1",
+    "@prisma/client": "^2.23.0",
     "apollo-server-micro": "^2.24.1",
     "class-validator": "^0.13.1",
     "graphql": "^15.5.0",
