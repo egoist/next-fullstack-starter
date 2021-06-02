@@ -51,7 +51,7 @@ Build for production.
 
 #### `yarn gql-gen`
 
-Generate React (Apollo) hooks for GraphQL queries, powered by [GraphQL Code Generator](https://graphql-code-generator.com/)
+Generate React (urql) hooks for GraphQL queries, powered by [GraphQL Code Generator](https://graphql-code-generator.com/)
 
 #### `yarn prisma-client`
 
@@ -81,7 +81,7 @@ We create a GraphQL at `/api/graphql` using Apollo Server and Type GraphQL, Grap
 
 Every time you create a new resolver file you need to add it to `src/pages/api/graphql.ts`.
 
-On the client-side we use Apollo Client to execute GraphQL query, you should write GraphQL queries using SDL in `src/graphql` and run `yarn gql-gen` to generate corresponding React hooks, and import the generated hooks from `src/generated/graphql` like this:
+On the client-side we use urql to execute GraphQL queries, you should write GraphQL queries using SDL in `src/graphql` and run `yarn gql-gen` to generate corresponding React hooks, and import the generated hooks from `src/generated/graphql` like this:
 
 ```ts
 import { useCurrentUserQuery } from '$src/generated/graphql'
