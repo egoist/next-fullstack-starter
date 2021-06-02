@@ -1,8 +1,7 @@
 import 'reflect-metadata'
 import { ApolloServer } from 'apollo-server-micro'
 import { NextApiHandler } from 'next'
-import { getSession } from 'next-auth/client'
-import { schema } from '$server/lib/singletion'
+import { schema } from '$server/lib/graphql-schema'
 import { getCurrentUser } from '$server/lib/auth'
 
 export const config = {

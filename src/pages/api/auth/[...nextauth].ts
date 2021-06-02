@@ -1,7 +1,7 @@
 import NextAuth from 'next-auth'
 import Adapters from 'next-auth/adapters'
 import Providers from 'next-auth/providers'
-import { prisma } from '$server/lib/singletion'
+import { prisma } from '$server/lib/prisma'
 
 export default NextAuth({
   // Configure one or more authentication providers

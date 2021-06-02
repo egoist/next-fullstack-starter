@@ -10,7 +10,7 @@ import {
 import { GqlContext } from '$server/decorators/gql-context'
 import type { Context } from '$server/decorators/gql-context'
 import { requireAuth } from '$server/guards/require-auth'
-import { prisma } from '$server/lib/singletion'
+import { prisma } from '$server/lib/prisma'
 
 @ObjectType()
 class CurrentUser {
