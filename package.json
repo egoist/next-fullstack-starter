@@ -16,14 +16,13 @@
     ]
   },
   "dependencies": {
-    "@hapi/iron": "^6.0.0",
-    "@prisma/client": "^2.24.1",
+    "@prisma/client": "^2.25.0",
     "apollo-server-micro": "^2.25.1",
     "class-validator": "^0.13.1",
     "cookie": "^0.4.1",
     "graphql": "^15.5.0",
     "jsonwebtoken": "^8.5.1",
-    "next": "^10.2.3",
+    "next": "^11.0.0",
     "next-connect": "^0.10.1",
     "passport": "^0.4.1",
     "passport-github": "^1.1.0",
@@ -54,12 +53,12 @@
     "dotenv-expand": "^5.1.0",
     "husky": "^6.0.0",
     "lint-staged": "^10.5.4",
-    "postcss": "^8.3.4",
+    "postcss": "^8.3.5",
     "preact": "^10.5.13",
     "prettier": "^2.3.1",
-    "prisma": "^2.24.1",
-    "tailwindcss": "^2.1.4",
+    "prisma": "^2.25.0",
+    "tailwindcss": "^2.2.2",
     "ts-loader": "^8.1.0",
-    "typescript": "^4.3.2"
+    "typescript": "^4.3.4"
   }
 }
