@@ -16,6 +16,18 @@ export type Scalars = {
   Boolean: boolean
   Int: number
   Float: number
+  /** The javascript `Date` as string. Type represents date and time as the ISO Date string. */
+  DateTime: any
+}
+
+export type CurrentUser = {
+  __typename?: 'CurrentUser'
+  id: Scalars['Int']
+  name: Scalars['String']
+  email: Scalars['String']
+  image?: Maybe<Scalars['String']>
+  createdAt: Scalars['DateTime']
+  updatedAt: Scalars['DateTime']
 }
 
 export type Query = {
@@ -23,23 +35,16 @@ export type Query = {
   currentUser: CurrentUser
 }
 
-export type CurrentUser = {
-  __typename?: 'CurrentUser'
-  id: Scalars['Int']
-  email: Scalars['String']
-  avatarUrl?: Maybe<Scalars['String']>
-}
-
 export type CurrentUserQueryVariables = Exact<{ [key: string]: never }>
 
 export type CurrentUserQuery = { __typename?: 'Query' } & {
   currentUser: { __typename?: 'CurrentUser' } & Pick<
     CurrentUser,
-    'id' | 'email' | 'avatarUrl'
+    'id' | 'name' | 'email' | 'image'
   >
 }
 
-export const CurrentUserDocument: DocumentNode = {
+export const CurrentUserDocument = {
   kind: 'Document',
   definitions: [
     {
@@ -56,8 +61,9 @@ export const CurrentUserDocument: DocumentNode = {
               kind: 'SelectionSet',
               selections: [
                 { kind: 'Field', name: { kind: 'Name', value: 'id' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'name' } },
                 { kind: 'Field', name: { kind: 'Name', value: 'email' } },
-                { kind: 'Field', name: { kind: 'Name', value: 'avatarUrl' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'image' } },
               ],
             },
           },
@@ -65,7 +71,7 @@ export const CurrentUserDocument: DocumentNode = {
       },
     },
   ],
-}
+} as unknown as DocumentNode
 
 export function useCurrentUserQuery(
   options: Omit<Urql.UseQueryArgs<CurrentUserQueryVariables>, 'query'> = {},
