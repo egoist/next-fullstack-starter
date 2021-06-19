@@ -6,7 +6,6 @@ This project serves as the starting point of some of my SaaS products, so I'm co
 
 ## Features
 
-- Authentication via [Next Auth](https://next-auth.js.org/).
 - Query database with [Prisma](https://prisma.io)
 - [Type-first approach for writing GraphQL schema](https://typegraphql.com/)
 - [TailwindCSS](https://tailwindcss.com)

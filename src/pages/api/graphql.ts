@@ -1,8 +1,8 @@
 import 'reflect-metadata'
 import { ApolloServer } from 'apollo-server-micro'
 import { NextApiHandler } from 'next'
-import { schema } from '$server/lib/graphql-schema'
-import { getCurrentUser } from '$server/lib/auth'
+import { schema } from '$server/graphql-schema'
+import { getSession } from '$server/auth'
 
 export const config = {
   api: {
@@ -29,7 +29,7 @@ const apiHandler: NextApiHandler = async (req, res) => {
       },
     },
     async context({ req, res }) {
-      const user = await getCurrentUser(req)
+      const user = await getSession(req)
       return {
         req,
         res,

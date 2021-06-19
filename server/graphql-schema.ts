@@ -6,7 +6,7 @@ export const schema = singletonAsync(
   async () => {
     const resolvers: any = []
     // @ts-expect-error
-    const r = require.context('../resolvers', false, /\.resolver\.ts$/)
+    const r = require.context('./resolvers', false, /\.resolver\.ts$/)
     r.keys().forEach((key: string) => {
       resolvers.push(r(key).default)
     })

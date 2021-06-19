@@ -1,16 +1,7 @@
-import {
-  Field,
-  FieldResolver,
-  Int,
-  ObjectType,
-  Query,
-  Resolver,
-  Root,
-} from 'type-graphql'
-import { GqlContext } from '$server/decorators/gql-context'
-import type { Context } from '$server/decorators/gql-context'
-import { requireAuth } from '$server/guards/require-auth'
-import { prisma } from '$server/lib/prisma'
+import { Field, Int, ObjectType, Query, Resolver, Root } from 'type-graphql'
+import { GqlContext } from '$server/gql-context'
+import type { Context } from '$server/gql-context'
+import { guard } from '$server/auth'
 
 @ObjectType()
 class CurrentUser {
@@ -18,10 +9,13 @@ class CurrentUser {
   id: number
 
   @Field()
+  name: string
+
+  @Field()
   email: string
 
   @Field({ nullable: true })
-  avatarUrl?: string
+  image?: string
 
   @Field()
   createdAt: Date
@@ -30,32 +24,11 @@ class CurrentUser {
   updatedAt: Date
 }
 
-@ObjectType()
-class Account {
-  @Field()
-  providerType: string
-
-  @Field()
-  providerId: string
-
-  @Field()
-  providerAccountId: string
-}
-
 @Resolver((of) => CurrentUser)
 export default class CurrentUserResolver {
   @Query((returns) => CurrentUser)
   async currentUser(@GqlContext() ctx: Context) {
-    const user = requireAuth(ctx)
+    const { user } = guard(ctx)
     return user
-  }
-
-  @FieldResolver((returns) => Account)
-  account(@Root() user: CurrentUser) {
-    return prisma.account.findFirst({
-      where: {
-        userId: user.id,
-      },
-    })
   }
 }
