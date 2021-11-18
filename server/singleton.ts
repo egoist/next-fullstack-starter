@@ -1,6 +1,3 @@
-import { PrismaClient } from '@prisma/client'
-import { buildSchema } from 'type-graphql'
-
 global._singletons = global._singletons || {}
 
 export const singleton = <T>(id: string, factory: () => T): T => {

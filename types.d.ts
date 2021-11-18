@@ -12,9 +12,6 @@ declare namespace NodeJS {
     AUTH_COOKIE_DOMAIN: string
     NEXT_PUBLIC_APP_DOMAIN?: string
   }
-  interface Global {
-    _singletons: Record<string, any>
-  }
 }
 
 type $TsFixMe = any
@@ -24,3 +21,5 @@ declare namespace Express {
     id: number
   }
 }
+
+declare var _singletons: Record<string, any>

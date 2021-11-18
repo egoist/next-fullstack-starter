@@ -1,5 +1,5 @@
 import { buildSchema } from 'type-graphql'
-import { singletonAsync } from './singletion'
+import { singletonAsync } from './singleton'
 
 export const schema = singletonAsync(
   'graphq-schema',
