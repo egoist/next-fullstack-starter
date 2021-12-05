@@ -1,6 +1,8 @@
 import 'reflect-metadata'
 import { ApolloServer } from 'apollo-server-micro'
 import { NextApiHandler } from 'next'
+import connect from 'next-connect'
+import cors from 'cors'
 import { schema } from '$server/graphql-schema'
 import { getSession } from '$server/auth'
 
@@ -22,12 +24,6 @@ const apiHandler: NextApiHandler = async (req, res) => {
   await schema.wait
   const apolloServer = new ApolloServer({
     schema: schema.value,
-    tracing: !isProd,
-    playground: {
-      settings: {
-        'request.credentials': 'include',
-      },
-    },
     async context({ req, res }) {
       const user = await getSession(req)
       return {
@@ -38,6 +34,8 @@ const apiHandler: NextApiHandler = async (req, res) => {
     },
   })
 
+  await apolloServer.start()
+
   handler = apolloServer.createHandler({
     path: `/api/graphql`,
   })
@@ -45,4 +43,4 @@ const apiHandler: NextApiHandler = async (req, res) => {
   return handler(req, res)
 }
 
-export default apiHandler
+export default connect().use(cors({})).use(apiHandler)

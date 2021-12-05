@@ -11,18 +11,17 @@ module.exports = {
         'react-dom': 'preact/compat',
       })
     }
-
+    console.log(isServer)
     if (isServer) {
-      for (const rule of config.module.rules) {
-        if (rule.test && rule.test.test('foo.ts')) {
-          rule.use = [].concat(rule.use, {
-            loader: 'ts-loader',
-            options: {
-              transpileOnly: true,
-            },
-          })
-        }
-      }
+      config.module.rules.push({
+        loader: 'ts-loader',
+        test: /\.ts$/,
+        exclude: [/node_modules/],
+        enforce: 'pre',
+        options: {
+          transpileOnly: true,
+        },
+      })
     }
 
     return config

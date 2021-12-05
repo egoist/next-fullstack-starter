@@ -2,6 +2,7 @@ import { IncomingMessage, ServerResponse } from 'http'
 import cookie from 'cookie'
 import { AuthenticationError } from 'apollo-server-micro'
 import { verify, sign } from 'jsonwebtoken'
+import { User } from '@prisma/client'
 import { prisma } from './prisma'
 import { Context } from './gql-context'
 
@@ -65,12 +66,17 @@ export const logout = (res: ServerResponse, redirectTo: string) => {
   redirect(res, redirectTo)
 }
 
-export const guard = (ctx: Context) => {
+export const getAuth = <TRequireAuth extends boolean = false>(
+  ctx: Context,
+  options: { requireAuth?: TRequireAuth } = {},
+) => {
   const { user } = ctx
 
-  if (!user) throw new AuthenticationError('unauthenticated')
+  if (!user && options.requireAuth) {
+    throw new AuthenticationError('You must be logged in')
+  }
 
   return {
-    user,
+    user: user as TRequireAuth extends true ? User : User | undefined | null,
   }
 }

@@ -1,10 +1,10 @@
-import { Field, Int, ObjectType, Query, Resolver, Root } from 'type-graphql'
+import { Field, Int, ObjectType, Query, Resolver } from 'type-graphql'
 import { GqlContext } from '$server/gql-context'
 import type { Context } from '$server/gql-context'
-import { guard } from '$server/auth'
+import { getAuth } from '$server/auth'
 
 @ObjectType()
-class CurrentUser {
+class Viewer {
   @Field((type) => Int)
   id: number
 
@@ -24,11 +24,11 @@ class CurrentUser {
   updatedAt: Date
 }
 
-@Resolver((of) => CurrentUser)
-export default class CurrentUserResolver {
-  @Query((returns) => CurrentUser)
-  async currentUser(@GqlContext() ctx: Context) {
-    const { user } = guard(ctx)
+@Resolver((of) => Viewer)
+export default class ViewerResolver {
+  @Query((returns) => Viewer)
+  async viewer(@GqlContext() ctx: Context) {
+    const { user } = getAuth(ctx, { requireAuth: true })
     return user
   }
 }
