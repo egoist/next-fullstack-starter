@@ -1,7 +1,4 @@
 module.exports = {
-  future: {
-    // webpack5: true,
-  },
   webpack(config, { dev, isServer }) {
     // Replace React with Preact in client production build
     if (!dev && !isServer) {
@@ -11,7 +8,7 @@ module.exports = {
         'react-dom': 'preact/compat',
       })
     }
-    console.log(isServer)
+
     if (isServer) {
       config.module.rules.push({
         loader: 'ts-loader',
