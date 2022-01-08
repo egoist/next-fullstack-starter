@@ -2,10 +2,18 @@ import { AuthenticationError } from 'apollo-server-micro'
 import { User as DB_User } from '@prisma/client'
 import { Context } from './gql-context'
 import { prisma } from './prisma'
+import { IncomingMessage } from 'http'
+import { getSession } from 'next-auth/react'
 
 export type AuthUser = DB_User & {}
 
-export const getAuthUser = async (uid?: string): Promise<AuthUser | null> => {
+export const getAuthUser = async (
+  req: IncomingMessage,
+): Promise<AuthUser | null> => {
+  const session = await getSession({ req })
+
+  const uid = session?.userId as string | undefined
+
   if (!uid) return null
   const user = await prisma.user.findUnique({
     where: {

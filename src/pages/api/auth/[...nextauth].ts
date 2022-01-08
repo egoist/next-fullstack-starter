@@ -16,6 +16,20 @@ export default NextAuth({
     }),
     // ...add more providers here
   ],
+  cookies: {
+    sessionToken: {
+      name: process.env.AUTH_COOKIE_NAME,
+      options: {
+        domain: process.env.AUTH_COOKIE_DOMAIN,
+        path: '/',
+        secure: true,
+        httpOnly: true,
+        // Apollo Studio requires sameSite: none
+        sameSite: process.env.NODE_ENV === 'development' ? 'none' : 'lax',
+        maxAge: 60 * 60 * 24 * 30, // 30 days
+      },
+    },
+  },
   callbacks: {
     async jwt({ token }) {
       return token

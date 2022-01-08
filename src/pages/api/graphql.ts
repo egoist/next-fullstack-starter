@@ -1,11 +1,9 @@
 import 'reflect-metadata'
-import { ApolloServerPluginLandingPageLocalDefault } from 'apollo-server-core'
 import { ApolloServer } from 'apollo-server-micro'
 import { NextApiHandler } from 'next'
 import connect from 'next-connect'
 import cors from 'cors'
 import { schema } from '$server/graphql-schema'
-import { getSession } from 'next-auth/react'
 import { getAuthUser } from '$server/auth'
 
 export const config = {
@@ -26,10 +24,8 @@ const apiHandler: NextApiHandler = async (req, res) => {
   await schema.wait
   const apolloServer = new ApolloServer({
     schema: schema.value,
-    plugins: [ApolloServerPluginLandingPageLocalDefault],
     async context({ req, res }) {
-      const session = await getSession({ req })
-      const user = await getAuthUser(session?.userId as string)
+      const user = await getAuthUser(req)
       return {
         req,
         res,
@@ -47,4 +43,13 @@ const apiHandler: NextApiHandler = async (req, res) => {
   return handler(req, res)
 }
 
-export default connect().use(cors({})).use(apiHandler)
+export default connect()
+  .use(
+    cors({
+      credentials: !isProd,
+      origin: isProd
+        ? []
+        : ['https://studio.apollographql.com', 'http://localhost:3000'],
+    }),
+  )
+  .use(apiHandler)
