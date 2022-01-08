@@ -18,8 +18,8 @@
   "dependencies": {
     "@next-auth/prisma-adapter": "0.5.4",
     "@prisma/client": "3.7.0",
-    "apollo-server-core": "^3.5.0",
-    "apollo-server-micro": "^3.5.0",
+    "apollo-server-core": "3.6.1",
+    "apollo-server-micro": "3.6.1",
     "class-validator": "0.13.2",
     "cookie": "0.4.1",
     "cors": "2.8.5",
