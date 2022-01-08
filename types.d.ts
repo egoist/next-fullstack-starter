@@ -8,8 +8,8 @@ declare namespace NodeJS {
     GOOGLE_CLIENT_SECRET?: string
     DATABASE_URL: string
     AUTH_COOKIE_NAME: string
-    AUTH_COOKIE_DOMAIN: string
-    NEXT_PUBLIC_APP_DOMAIN?: string
+    AUTH_COOKIE_DOMAIN?: string
+    AUTH_SECRET: string
   }
 }
 

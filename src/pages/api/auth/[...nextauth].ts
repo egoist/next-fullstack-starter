@@ -5,6 +5,7 @@ import { prisma } from '$server/prisma'
 
 export default NextAuth({
   adapter: PrismaAdapter(prisma),
+  secret: process.env.AUTH_SECRET,
   session: {
     strategy: 'jwt',
   },
