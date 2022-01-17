@@ -11,7 +11,7 @@ specifiers:
   '@prisma/client': 3.7.0
   '@types/cookie': 0.4.1
   '@types/cors': 2.8.12
-  '@types/jsonwebtoken': 8.5.6
+  '@types/jsonwebtoken': 8.5.8
   '@types/node': 16.11.19
   '@types/passport': 1.0.7
   '@types/passport-github': 1.1.7
@@ -82,7 +82,7 @@ devDependencies:
   '@graphql-codegen/typescript-urql': 3.4.2_graphql@15.8.0
   '@types/cookie': 0.4.1
   '@types/cors': 2.8.12
-  '@types/jsonwebtoken': 8.5.6
+  '@types/jsonwebtoken': 8.5.8
   '@types/node': 16.11.19
   '@types/passport': 1.0.7
   '@types/passport-github': 1.1.7
@@ -1110,7 +1110,7 @@ packages:
       '@graphql-tools/utils': 8.5.3_graphql@15.8.0
       '@types/js-yaml': 4.0.4
       '@types/json-stable-stringify': 1.0.33
-      '@types/jsonwebtoken': 8.5.6
+      '@types/jsonwebtoken': 8.5.8
       chalk: 4.1.2
       debug: 4.3.3
       dotenv: 10.0.0
@@ -1586,8 +1586,8 @@ packages:
     resolution: {integrity: sha512-qEWiQff6q2tA5gcJGWwzplQcXdJtm+0oy6IHGHzlOf3eFAkGE/FIPXZK9ofWgNSHVp8AFFI33PJJshS0ei3Gvw==}
     dev: true
 
-  /@types/jsonwebtoken/8.5.6:
-    resolution: {integrity: sha512-+P3O/xC7nzVizIi5VbF34YtqSonFsdnbXBnWUCYRiKOi1f9gA4sEFvXkrGr/QVV23IbMYvcoerI7nnhDUiWXRQ==}
+  /@types/jsonwebtoken/8.5.8:
+    resolution: {integrity: sha512-zm6xBQpFDIDM6o9r6HSgDeIcLy82TKWctCXEPbJJcXb5AKmi5BNNdLXneixK4lplX3PqIVcwLBCGE/kAGnlD4A==}
     dependencies:
       '@types/node': 16.11.19
     dev: true
