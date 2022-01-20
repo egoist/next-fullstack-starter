@@ -16,7 +16,7 @@
     ]
   },
   "dependencies": {
-    "@next-auth/prisma-adapter": "0.5.4",
+    "@next-auth/prisma-adapter": "1.0.1",
     "@prisma/client": "3.7.0",
     "apollo-server-core": "3.6.1",
     "apollo-server-micro": "3.6.1",
