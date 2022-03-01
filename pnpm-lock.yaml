@@ -36,7 +36,7 @@ specifiers:
   tailwindcss: 3.0.15
   ts-loader: 9.2.6
   type-graphql: 1.1.1
-  typescript: 4.5.4
+  typescript: 4.6.2
   urql: 2.0.6
 
 dependencies:
@@ -59,7 +59,7 @@ dependencies:
 
 devDependencies:
   '@egoist/prettier-config': 1.0.0
-  '@graphql-codegen/cli': 2.3.1_426caa782637944fd9917f8866a43bf5
+  '@graphql-codegen/cli': 2.3.1_e654ead7d7436269fd884d2f16788254
   '@graphql-codegen/introspection': 2.1.1_graphql@15.8.0
   '@graphql-codegen/typescript': 2.4.2_graphql@15.8.0
   '@graphql-codegen/typescript-operations': 2.2.2_graphql@15.8.0
@@ -77,8 +77,8 @@ devDependencies:
   prettier: 2.5.1
   prisma: 3.7.0
   tailwindcss: 3.0.15_ef48b3b8837f8a23677bffe8f9cd866d
-  ts-loader: 9.2.6_typescript@4.5.4
-  typescript: 4.5.4
+  ts-loader: 9.2.6_typescript@4.6.2
+  typescript: 4.6.2
 
 packages:
 
@@ -718,7 +718,7 @@ packages:
     resolution: {integrity: sha512-D1Tp9Jv4aVoEo3cOAO966gFCI0wx/1lZ6sEHX8uMAfyVxuxD2+knGxhfGlb/FNLxWV3ifSI5hOmB/zFfsi7Rzw==}
     dev: true
 
-  /@endemolshinegroup/cosmiconfig-typescript-loader/3.0.2_71a2f61964e37a4d68dab6dadd2a99a0:
+  /@endemolshinegroup/cosmiconfig-typescript-loader/3.0.2_c84a270c92bf6e8d30a9786dab5936e4:
     resolution: {integrity: sha512-QRVtqJuS1mcT56oHpVegkKBlgtWjXw/gHNWO3eL9oyB5Sc7HBoc2OLG/nYpVfT/Jejvo3NUrD0Udk7XgoyDKkA==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
@@ -727,13 +727,13 @@ packages:
       cosmiconfig: 7.0.1
       lodash.get: 4.4.2
       make-error: 1.3.6
-      ts-node: 9.1.1_typescript@4.5.4
+      ts-node: 9.1.1_typescript@4.6.2
       tslib: 2.3.1
     transitivePeerDependencies:
       - typescript
     dev: true
 
-  /@graphql-codegen/cli/2.3.1_426caa782637944fd9917f8866a43bf5:
+  /@graphql-codegen/cli/2.3.1_e654ead7d7436269fd884d2f16788254:
     resolution: {integrity: sha512-xMSvYqFtnRXOp/sVJSyqiFTm70X8ouLXiq5o/R/D3yQtA6NNudAC+Q4oxg9/LZKnRDL6pehwdC8CNnQk0Tf7Sw==}
     hasBin: true
     peerDependencies:
@@ -763,7 +763,7 @@ packages:
       glob: 7.2.0
       globby: 11.0.4
       graphql: 15.8.0
-      graphql-config: 4.1.0_426caa782637944fd9917f8866a43bf5
+      graphql-config: 4.1.0_e654ead7d7436269fd884d2f16788254
       inquirer: 8.2.0
       is-glob: 4.0.3
       json-to-pretty-yaml: 1.2.2
@@ -3207,13 +3207,13 @@ packages:
   /graceful-fs/4.2.8:
     resolution: {integrity: sha512-qkIilPUYcNhJpd33n0GBXTB1MMPp14TxEsEs0pTrsSVucApsYzW5V+Q8Qxhik6KU3evy+qkAAowTByymK0avdg==}
 
-  /graphql-config/4.1.0_426caa782637944fd9917f8866a43bf5:
+  /graphql-config/4.1.0_e654ead7d7436269fd884d2f16788254:
     resolution: {integrity: sha512-Myqay6pmdcmX3KqoH+bMbeKZ1cTODpHS2CxF1ZzNnfTE+YUpGTcp01bOw6LpzamRb0T/WTYtGFbZeXGo9Hab2Q==}
     engines: {node: '>= 10.0.0'}
     peerDependencies:
       graphql: ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
-      '@endemolshinegroup/cosmiconfig-typescript-loader': 3.0.2_71a2f61964e37a4d68dab6dadd2a99a0
+      '@endemolshinegroup/cosmiconfig-typescript-loader': 3.0.2_c84a270c92bf6e8d30a9786dab5936e4
       '@graphql-tools/graphql-file-loader': 7.3.3_graphql@15.8.0
       '@graphql-tools/json-file-loader': 7.3.3_graphql@15.8.0
       '@graphql-tools/load': 7.4.1_graphql@15.8.0
@@ -5698,7 +5698,7 @@ packages:
       regexparam: 1.3.0
     dev: false
 
-  /ts-loader/9.2.6_typescript@4.5.4:
+  /ts-loader/9.2.6_typescript@4.6.2:
     resolution: {integrity: sha512-QMTC4UFzHmu9wU2VHZEmWWE9cUajjfcdcws+Gh7FhiO+Dy0RnR1bNz0YCHqhI0yRowCE9arVnNxYHqELOy9Hjw==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -5709,14 +5709,14 @@ packages:
       enhanced-resolve: 5.8.3
       micromatch: 4.0.4
       semver: 7.3.5
-      typescript: 4.5.4
+      typescript: 4.6.2
     dev: true
 
   /ts-log/2.2.4:
     resolution: {integrity: sha512-DEQrfv6l7IvN2jlzc/VTdZJYsWUnQNCsueYjMkC/iXoEoi5fNan6MjeDqkvhfzbmHgdz9UxDUluX3V5HdjTydQ==}
     dev: true
 
-  /ts-node/9.1.1_typescript@4.5.4:
+  /ts-node/9.1.1_typescript@4.6.2:
     resolution: {integrity: sha512-hPlt7ZACERQGf03M253ytLY3dHbGNGrAq9qIHWUY9XHYl1z7wYngSr3OQ5xmui8o2AaxsONxIzjafLUiWBo1Fg==}
     engines: {node: '>=10.0.0'}
     hasBin: true
@@ -5728,7 +5728,7 @@ packages:
       diff: 4.0.2
       make-error: 1.3.6
       source-map-support: 0.5.20
-      typescript: 4.5.4
+      typescript: 4.6.2
       yn: 3.1.1
     dev: true
 
@@ -5781,8 +5781,8 @@ packages:
       mime-types: 2.1.34
     dev: false
 
-  /typescript/4.5.4:
-    resolution: {integrity: sha512-VgYs2A2QIRuGphtzFV7aQJduJ2gyfTljngLzjpfW9FoYZF6xuw1W0vW9ghCKLfcWrCFxK81CSGRAvS1pn4fIUg==}
+  /typescript/4.6.2:
+    resolution: {integrity: sha512-HM/hFigTBHZhLXshn9sN37H085+hQGeJHJ/X7LpBWLID/fbc2acUMfU+lGD98X81sKP+pFa9f0DZmCwB9GnbAg==}
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true
