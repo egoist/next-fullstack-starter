@@ -16,7 +16,6 @@
     ]
   },
   "dependencies": {
-    "@next-auth/prisma-adapter": "1.0.2",
     "@prisma/client": "3.11.0",
     "apollo-server-core": "3.6.4",
     "apollo-server-micro": "3.6.4",
@@ -25,7 +24,6 @@
     "graphql": "15.8.0",
     "micro": "9.3.4",
     "next": "12.1.0",
-    "next-auth": "4.3.0",
     "next-connect": "0.12.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
