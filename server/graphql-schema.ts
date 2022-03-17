@@ -1,15 +1,17 @@
-import { buildSchema } from 'type-graphql'
-import { singletonAsync } from './singleton'
+import { buildSchema } from "type-graphql"
+import { singletonAsync } from "./singleton"
 
 export const schema = singletonAsync(
-  'graphq-schema',
+  "graphq-schema",
   async () => {
     const resolvers: any = []
     // @ts-expect-error
-    const r = require.context('./resolvers', false, /\.resolver\.ts$/)
-    r.keys().forEach((key: string) => {
-      resolvers.push(r(key).default)
-    })
+    const r = require.context("./resolvers", false, /\.resolver\.ts$/)
+
+    for (const key of r.keys()) {
+      const mod = await r(key)
+      resolvers.push(mod.default)
+    }
 
     const schema = await buildSchema({
       resolvers,
@@ -18,5 +20,5 @@ export const schema = singletonAsync(
     return schema
   },
   // Always rebuild schema on each request in development
-  process.env.NODE_ENV === 'production',
+  process.env.NODE_ENV === "production",
 )
