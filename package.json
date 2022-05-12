@@ -41,7 +41,7 @@
     "@types/cors": "2.8.12",
     "@types/node": "17.0.21",
     "@types/react": "17.0.40",
-    "@types/react-dom": "17.0.13",
+    "@types/react-dom": "17.0.17",
     "autoprefixer": "10.4.4",
     "husky": "7.0.4",
     "lint-staged": "12.3.6",
