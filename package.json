@@ -16,7 +16,7 @@
     ]
   },
   "dependencies": {
-    "@prisma/client": "3.11.0",
+    "@prisma/client": "3.15.2",
     "apollo-server-core": "3.6.4",
     "apollo-server-micro": "3.6.4",
     "class-validator": "0.13.2",
@@ -48,7 +48,7 @@
     "postcss": "8.4.12",
     "preact": "10.6.6",
     "prettier": "2.6.0",
-    "prisma": "3.11.0",
+    "prisma": "3.15.2",
     "tailwindcss": "3.0.23",
     "typescript": "4.6.2"
   }
