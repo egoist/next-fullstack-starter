@@ -44,7 +44,7 @@
     "@types/react-dom": "17.0.13",
     "autoprefixer": "10.4.4",
     "husky": "7.0.4",
-    "lint-staged": "12.3.6",
+    "lint-staged": "12.5.0",
     "postcss": "8.4.12",
     "preact": "10.6.6",
     "prettier": "2.6.0",
