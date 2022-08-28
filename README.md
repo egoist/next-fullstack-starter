@@ -1,6 +1,6 @@
 # Next FullStack Starter
 
-Next.js + Prisma + TailwindCSS + (Type-)GraphQL
+Next.js + Prisma + TailwindCSS + TRPC
 
 This project serves as the starting point of some of my SaaS products, so I'm continuously improving it.
 
@@ -20,7 +20,7 @@ Moving `.env.example` to `.env`.
 Then get your database ready, install PostgreSQL and make sure you have a user and database matching the default one we use:
 
 ```
-DB_URL="postgresql://postgres:pass@localhost:5432/mydb?schema=public"
+DATABASE_URL="postgresql://postgres:password@localhost:5432/mydb?schema=public"
 ```
 
 You can also customize it by updating `.env` file.
