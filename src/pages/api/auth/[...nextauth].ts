@@ -12,6 +12,7 @@ import {
   GOOGLE_CLIENT_SECRET,
 } from "$server/config"
 import { truthy } from "$src/lib/utils"
+import { CurrentUser } from "$server/trpc/auth"
 
 export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma),
@@ -25,6 +26,19 @@ export const authOptions: NextAuthOptions = {
         path: "/",
         secure: true,
       },
+    },
+  },
+  callbacks: {
+    session({ session, user }) {
+      const currentUser: CurrentUser = {
+        id: user.id,
+        name: user.name,
+        email: user.email,
+        emailVerified: user.emailVerified as Date,
+        image: user.image,
+      }
+      session.user = currentUser
+      return session
     },
   },
   providers: [
