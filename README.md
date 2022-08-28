@@ -7,7 +7,7 @@ This project serves as the starting point of some of my SaaS products, so I'm co
 ## Features
 
 - Query database with [Prisma](https://prisma.io)
-- [Type-first approach for writing GraphQL schema](https://typegraphql.com/)
+- [Fullstack development with TRPC](https://trpc.io/)
 - [TailwindCSS](https://tailwindcss.com)
 - More to come..
 
@@ -29,70 +29,47 @@ You can also customize it by updating `.env` file.
 
 ```bash
 # Install dependencies
-yarn
-
-# Apply migrations if you're running for the first time
-yarn migrate-dev
+pnpm i
 
 # Start Next.js
-yarn dev
+pnpm dev
 ```
 
 ### NPM Scripts
 
-#### `yarn dev`
+#### `pnpm dev`
 
 Run the development server.
 
-#### `yarn build`
+#### `pnpm build`
 
 Build for production.
 
-#### `yarn gql-gen`
-
-Generate React (urql) hooks for GraphQL queries, powered by [GraphQL Code Generator](https://graphql-code-generator.com/)
-
-#### `yarn prisma-client`
+#### `pnpm prisma-client`
 
 Generate Prisma client.
 
-#### `yarn migrate-dev`
+#### `pnpm migrate-dev`
 
 **For development only**
 
 Save migrate files, and apply changes to database, typically you should run this after making changes to `prisma/schema.prisma`.
 
-#### `yarn migrate-deploy`
+#### `pnpm migrate-deploy`
 
 **For production only**
 
 Applying local migrations to the database.
+
+### TRPC
+
+[TRPC](https://trpc.io) app router is located at [server/trpc/index.ts](./server/trpc/index.ts).
 
 ### webpack
 
 #### Aliases
 
 We also added two Next.js/TS aliases: `$src` for `src` folder and `$server` for `server` folder.
-
-### GraphQL
-
-We create a GraphQL at `/api/graphql` using Apollo Server and Type GraphQL, GraphQL resolvers are populated at `server/resolvers`, consult [Type GraphQL](https://typegraphql.com/docs/custom-decorators.html) docs for more.
-
-Every time you create a new resolver file you need to add it to `src/pages/api/graphql.ts`.
-
-On the client-side we use urql to execute GraphQL queries, you should write GraphQL queries using SDL in `src/graphql` and run `yarn gql-gen` to generate corresponding React hooks, and import the generated hooks from `src/generated/graphql` like this:
-
-```ts
-import { useCurrentUserQuery } from '$src/generated/graphql'
-
-const currentUser = useCurrentUserQuery()
-
-if (currentUser.loading) {
-  return null
-}
-
-return <div>{currentUser.data.currentUser.name}</div>
-```
 
 ### Style guide
 

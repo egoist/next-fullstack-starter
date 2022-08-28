@@ -1,4 +1,4 @@
-import { PrismaClient } from '@prisma/client'
-import { singleton } from './singleton'
+import { PrismaClient } from "@prisma/client"
+import { singleton } from "./singleton"
 
-export const prisma = singleton('prisma', () => new PrismaClient())
+export const prisma = singleton("prisma", () => new PrismaClient())
