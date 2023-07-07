@@ -9,6 +9,7 @@ This project serves as the starting point of some of my SaaS products, so I'm co
 - Query database with [Prisma](https://prisma.io)
 - [Fullstack development with TRPC](https://trpc.io/)
 - [TailwindCSS](https://tailwindcss.com)
+- Login by sending code to email
 - More to come..
 
 ## Documentation
@@ -16,6 +17,8 @@ This project serves as the starting point of some of my SaaS products, so I'm co
 ### Prerequisites
 
 Moving `.env.example` to `.env`.
+
+Use [direnv](https://direnv.net/) to automatically load environment variables.
 
 Then get your database ready, install PostgreSQL and make sure you have a user and database matching the default one we use:
 
@@ -31,7 +34,10 @@ You can also customize it by updating `.env` file.
 # Install dependencies
 pnpm i
 
-# Start Next.js
+# Initial database
+pnpm --filter web db-push
+
+# Start Next.js web app
 pnpm dev
 ```
 
@@ -39,47 +45,15 @@ pnpm dev
 
 #### `pnpm dev`
 
-Run the development server.
+Run the development server for web app.
 
 #### `pnpm build`
 
-Build for production.
-
-#### `pnpm prisma-client`
-
-Generate Prisma client.
-
-#### `pnpm migrate-dev`
-
-**For development only**
-
-Save migrate files, and apply changes to database, typically you should run this after making changes to `prisma/schema.prisma`.
-
-#### `pnpm migrate-deploy`
-
-**For production only**
-
-Applying local migrations to the database.
+Build the web app.
 
 ### TRPC
 
 [TRPC](https://trpc.io) app router is located at [server/trpc/index.ts](./server/trpc/index.ts).
-
-### webpack
-
-#### Aliases
-
-We also added two Next.js/TS aliases: `$src` for `src` folder and `$server` for `server` folder.
-
-### Style guide
-
-#### Variable casing
-
-Use PascalCase for Component name, otherwise camelCase is preferred.
-
-#### Filename casing
-
-Use PascalCase for React component files, other wise use kebab-case.
 
 ## License
 

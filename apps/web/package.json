@@ -1,0 +1,47 @@
+{
+  "private": true,
+  "name": "web",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start --port $PORT",
+    "prisma-client": "prisma generate",
+    "migrate-dev": "prisma migrate dev",
+    "migrate-deploy": "prisma migrate deploy",
+    "db-push": "prisma db push"
+  },
+  "dependencies": {
+    "@prisma/client": "4.16.2",
+    "@radix-ui/react-slot": "^1.0.2",
+    "@tanstack/react-query": "^4.29.19",
+    "@trpc/client": "^10.34.0",
+    "@trpc/next": "^10.34.0",
+    "@trpc/react-query": "^10.34.0",
+    "@trpc/server": "^10.34.0",
+    "clsx": "^1.2.1",
+    "dayjs": "^1.11.9",
+    "nanoid": "^4.0.2",
+    "next": "^13.4.9",
+    "next-seo": "^6.1.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.45.1",
+    "react-hot-toast": "^2.4.1",
+    "resend": "^0.16.0",
+    "tailwind-merge": "^1.13.2",
+    "tailwind-variants": "^0.1.10",
+    "zod": "^3.21.4"
+  },
+  "devDependencies": {
+    "@egoist/prettier-config": "1.0.0",
+    "@types/cookie": "0.5.1",
+    "@types/node": "18.7.13",
+    "@types/react": "18.0.17",
+    "autoprefixer": "10.4.4",
+    "postcss": "8.4.25",
+    "prettier": "3.0.0",
+    "prisma": "4.16.2",
+    "tailwindcss": "3.3.2",
+    "typescript": "5.1.6"
+  }
+}
